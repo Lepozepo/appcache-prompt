@@ -24,7 +24,8 @@ Reload._onMigrate('appcache', function(retry) {
 
   if (!updatingAppcache) {
     try {
-      window.applicationCache.update();
+			// Ask before downloading
+			UI.insert(UI.render(Template["appcache-prompt"]), document.getElementsByTagName("body")[0]);
     } catch (e) {
       Meteor._debug('applicationCache update error', e);
       // There's no point in delaying the reload if we can't update the cache.
@@ -48,17 +49,14 @@ var cacheIsNowUpToDate = function() {
 };
 
 window.applicationCache.addEventListener('updateready', function(e) {
-  if (Meteor.settings && Meteor.settings.public && Meteor.settings.public.appcache == "prompt") {
-    e.preventDefault();
-    UI.insert(UI.render(Template["appcache-prompt"]), document.getElementsByTagName("body")[0]);
-  } else {
-    cacheIsNowUpToDate();
-  }
+	e.preventDefault();
+	cacheIsNowUpToDate();
+	reloadRetry();
 }, false);
 
 Template["appcache-prompt"].events = {
   "click .reload": function(e, t) {
-    cacheIsNowUpToDate();
+    window.applicationCache.update();
   }
 }
 

@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "appcache-extra": {
+		  "path":"../../"
+    },
+    "jade": {}
+  }
+}
