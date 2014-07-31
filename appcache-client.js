@@ -25,7 +25,7 @@ Reload._onMigrate('appcache', function(retry) {
   if (!updatingAppcache) {
     try {
 			// Ask before downloading
-			UI.insert(UI.render(Template["appcache-prompt"]), document.getElementsByTagName("body")[0]);
+			Session.set("appcache_prompt.ready",true);
     } catch (e) {
       Meteor._debug('applicationCache update error', e);
       // There's no point in delaying the reload if we can't update the cache.
@@ -52,13 +52,8 @@ window.applicationCache.addEventListener('updateready', function(e) {
 	e.preventDefault();
 	cacheIsNowUpToDate();
 	reloadRetry();
+	Session.set("appcache_prompt.ready",false);
 }, false);
-
-Template["appcache-prompt"].events = {
-  "click .reload": function(e, t) {
-    window.applicationCache.update();
-  }
-}
 
 // window.applicationCache.addEventListener('noupdate', cacheIsNowUpToDate, false);
 
