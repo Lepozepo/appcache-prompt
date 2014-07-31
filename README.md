@@ -30,4 +30,4 @@ You can attach the command to any type of event.
 
 ## Special Thanks
 
-Special thanks to Andrew Reedy[https://github.com/andrewreedy] for his initial work on AppCache Extra
+Special thanks to [Andrew Reedy](https://github.com/andrewreedy) for his initial work on [AppCache Extra](https://github.com/andrewreedy/meteor-appcache-extra/)
