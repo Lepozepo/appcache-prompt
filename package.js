@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "Enable the application cache in the browser (with extras)"
+  summary: "Client-controlled implementation of Meteor AppCache"
 });
 
 Package.on_use(function (api) {

@@ -1,8 +1,8 @@
 {
-    "name": "appcache-cordova",
-    "description": "Enable the application cache in the browser",
-    "homepage": "https://github.com/andrewreedy/meteor-appcache-cordova",
-    "author": "Andrew Reedy",
-    "version": "0.0.1",
-    "git": "https://github.com/andrewreedy/meteor-appcache-cordova.git"
+    "name": "appcache-prompt",
+    "description": "Client-controlled implementation of Meteor AppCache",
+    "homepage": "https://github.com/Lepozepo/meteor-appcache-extra",
+    "author": "Marcelo Reyna",
+    "version": "1.0.0",
+    "git": "https://github.com/Lepozepo/meteor-appcache-extra.git"
 }
