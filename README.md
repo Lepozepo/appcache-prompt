@@ -23,8 +23,10 @@ window.applicationCache.update()
 
 You can attach the command to any type of event.
 
-*NOTE: If the user reloads the page manually, the appcache will automatically update to latest
+*NOTES:
 
+.If the user reloads the page manually, the appcache will automatically update to latest
+.DO NOT INSTALL APPCACHE AND APPCACHE PROMPT!
 
 ================
 
